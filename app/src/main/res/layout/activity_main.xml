@@ -12,39 +12,123 @@
             type="kr.co.kumoh.d134.isl.view.viewmodel.MainViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
-        <TextView
-            android:id="@+id/txt_title"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_50dp"
-            android:textColor="@color/dark_blue"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="@dimen/text_20dp"
-            android:text="Intelligent Software Lab"
-            android:layout_marginLeft="@dimen/margin_5dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-        <ImageButton
-            android:layout_width="@dimen/height_50dp"
-            android:layout_height="@dimen/height_50dp"
-            android:background="@drawable/ic_drawer"
-            android:layout_marginRight="@dimen/margin_5dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/txt_title"
-            app:layout_constraintBottom_toBottomOf="@id/txt_title" />
+        android:visibility="visible"
+        tools:openDrawer="left">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="kr.co.kumoh.d134.isl.view.fragment.HomeFragment"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_50dp"
+                android:textColor="@color/dark_blue"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="@dimen/text_20dp"
+                android:text="Intelligent Software Lab"
+                android:layout_marginLeft="@dimen/margin_5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <ImageButton
+                android:layout_width="@dimen/height_50dp"
+                android:layout_height="@dimen/height_50dp"
+                android:background="@drawable/ic_drawer"
+                android:layout_marginRight="@dimen/margin_5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_title"
+                app:layout_constraintBottom_toBottomOf="@id/txt_title" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="kr.co.kumoh.d134.isl.view.fragment.HomeFragment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawer_main"
+            android:padding="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginRight="@dimen/margin_5dp"
+            android:layoutDirection="ltr">
+            <TextView
+                android:id="@+id/txt_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="@dimen/margin_5dp"
+                android:textSize="@dimen/text_15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="로그인 해주세요"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <Button
+                android:layout_width="@dimen/width_100dp"
+                android:layout_height="@dimen/height_50dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/dark_blue"
+                android:text="Login"
+                android:layout_marginRight="@dimen/margin_30dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_login"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_login" />
+
+            <ImageButton
+                android:id="@+id/btn_research"
+                android:layout_width="@dimen/width_70dp"
+                android:layout_height="@dimen/width_70dp"
+                android:background="@drawable/shape_oval_color_lightblue"
+                android:src="@drawable/ic_research"
+                android:layout_marginTop="@dimen/margin_30dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_login" />
+            <ImageButton
+                android:id="@+id/btn_members"
+                android:layout_width="@dimen/width_70dp"
+                android:layout_height="@dimen/width_70dp"
+                android:background="@drawable/shape_oval_color_lightblue"
+                android:src="@drawable/ic_members"
+                app:layout_constraintRight_toRightOf="@+id/btn_gallery"
+                app:layout_constraintLeft_toLeftOf="@+id/btn_research"
+                app:layout_constraintTop_toTopOf="@id/btn_research"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_research"/>
+            <ImageButton
+                android:id="@+id/btn_gallery"
+                android:layout_width="@dimen/width_70dp"
+                android:layout_height="@dimen/width_70dp"
+                android:background="@drawable/shape_oval_color_lightblue"
+                android:src="@drawable/ic_gallery"
+                app:layout_constraintRight_toLeftOf="@+id/btn_Community"
+                app:layout_constraintLeft_toRightOf="@+id/btn_members"
+                app:layout_constraintTop_toTopOf="@+id/btn_research"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_research"/>
+            <ImageButton
+                android:id="@+id/btn_Community"
+                android:layout_width="@dimen/width_70dp"
+                android:layout_height="@dimen/width_70dp"
+                android:background="@drawable/shape_oval_color_lightblue"
+                android:src="@drawable/ic_community"
+                tools:ignore="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_research"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_research"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
