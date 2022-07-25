@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import kr.co.kumoh.d134.isl.loading.LoadingDialog
+import kr.co.kumoh.d134.isl.util.ErrorUtil
+import kr.co.kumoh.d134.isl.util.ResultCodeUtil
 
 abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity(), BaseContractView {
     protected lateinit var mDataBinding: DB
@@ -42,5 +44,18 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
         }
 
         subscribeUi()
+    }
+
+    override fun loadResultCode(resResult: ResponseResult?) {
+        ResultCodeUtil.setResult(this@BaseActivity, resResult)
+    }
+
+    override fun loadErrorMessage(e: Throwable) {
+        ErrorUtil.showErrorMessage(this@BaseActivity, null) {}
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // overridePendingTransition etc..
     }
 }

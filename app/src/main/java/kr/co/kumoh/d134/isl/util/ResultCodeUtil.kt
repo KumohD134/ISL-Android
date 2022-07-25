@@ -3,7 +3,8 @@ package kr.co.kumoh.d134.isl.util
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
 import kr.co.kumoh.d134.isl.R
-import kr.co.kumoh.d134.isl.base.response.ResponseResult
+import kr.co.kumoh.d134.isl.base.ResponseResult
+import kr.co.kumoh.d134.isl.util.ResultCodeUtil
 
 /**
  * Created by KimBH on 2022/07/12.
