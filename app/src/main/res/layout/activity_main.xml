@@ -26,7 +26,9 @@
             <include layout="@layout/toolbar_layout"/>
         </LinearLayout>
 
-        <include layout="@layout/drawer_main"/>
+        <include
+            android:id="@+id/drawer_main"
+            layout="@layout/drawer_main"/>
 
         <!--    drawer: drawer로 사용할 때 layout_gravity 꼭 지정해줘야함-->
 

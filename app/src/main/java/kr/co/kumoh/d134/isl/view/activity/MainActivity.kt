@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.Gravity
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
 import kr.co.kumoh.d134.isl.R
 import kr.co.kumoh.d134.isl.base.BaseActivity
 import kr.co.kumoh.d134.isl.base.ResponseResult
@@ -28,16 +29,29 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             setSupportActionBar(toolbar)
             val actionBar = supportActionBar
             actionBar?.apply {
-                Log.d("동작 확인"," 툴바")
                 setDisplayShowCustomEnabled(true)
                 setDisplayShowTitleEnabled(false)
                 setDisplayHomeAsUpEnabled(true)
             }
-            //changeDrawer()
-            //drawerLayout.closeDrawers()
             toolbar.setNavigationOnClickListener {
                 Log.d("서랍 엶1","작동")
                 changeDrawer()
+            }
+            val btnResearch: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_research)
+            val btnMembers: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_members)
+            val btnGallery: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_gallery)
+            val btnCommunity: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_community)
+            btnResearch.setOnClickListener {
+                Log.d("동작 확인","리서치")
+            }
+            btnMembers.setOnClickListener {
+                Log.d("동작 확인","리서치")
+            }
+            btnGallery.setOnClickListener {
+                Log.d("동작 확인","리서치")
+            }
+            btnCommunity.setOnClickListener {
+                Log.d("동작 확인","리서치")
             }
         }
     }
