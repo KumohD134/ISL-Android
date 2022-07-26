@@ -21,6 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>() {
 
         }
         with(mDataBinding) {
+            vm = mViewModel
         }
     }
 }

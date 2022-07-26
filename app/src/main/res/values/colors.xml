@@ -10,5 +10,7 @@
 
     <color name="light_blue">#5F7ED9</color>
     <color name="blue">#30478C</color>
+    <color name="dirty_blue">#394BA2</color>
+    <color name="midnight_blue">#293A8B</color>
     <color name="dark_blue">#273A73</color>
 </resources>

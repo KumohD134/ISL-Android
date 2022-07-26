@@ -17,8 +17,194 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        tools:openDrawer="left">
+        tools:openDrawer="start">
 
+
+
+<!--    drawer: drawer로 사용할 때 layout_gravity 꼭 지정해줘야함-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/drawer"
+            android:visibility="gone"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginRight="@dimen/margin_5dp"
+            android:background="@drawable/drawer_main"
+            android:layoutDirection="ltr"
+            android:padding="@dimen/margin_15dp">
+
+            <TextView
+                android:id="@+id/txt_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="@dimen/margin_5dp"
+                android:gravity="center"
+                android:text="로그인 해주세요"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_15dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="@dimen/width_100dp"
+                android:layout_height="@dimen/height_50dp"
+                android:backgroundTint="@color/white"
+                android:text="Login"
+                android:textColor="@color/dark_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_login"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_login" />
+
+            <EditText
+                android:id="@+id/editxt_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_50dp"
+                android:drawableLeft="@drawable/ic_search"
+                android:hint="전체 검색"
+                android:backgroundTint="@color/light_blue"
+                android:textColorHint="@color/light_blue"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:maxLength="100"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_login"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_research"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/width_70dp"
+                android:layout_marginTop="@dimen/margin_30dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editxt_search">
+                <ImageButton
+                    android:id="@+id/imgbtn_research"
+                    android:layout_width="@dimen/width_70dp"
+                    android:layout_height="@dimen/width_70dp"
+                    android:background="@drawable/shape_oval_color_lightblue"
+                    android:src="@drawable/ic_research"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_30dp"
+                    android:text="Research"
+                    android:gravity="start|center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/imgbtn_research"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_members"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/width_70dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_research">
+                <ImageButton
+                    android:id="@+id/imgbtn_members"
+                    android:layout_width="@dimen/width_70dp"
+                    android:layout_height="@dimen/width_70dp"
+                    android:background="@drawable/shape_oval_color_lightblue"
+                    android:src="@drawable/ic_members"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_30dp"
+                    android:text="Members"
+                    android:gravity="start|center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/imgbtn_members"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_gallery"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/width_70dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_members">
+                <ImageButton
+                    android:id="@+id/imgbtn_gallery"
+                    android:layout_width="@dimen/width_70dp"
+                    android:layout_height="@dimen/width_70dp"
+                    android:background="@drawable/shape_oval_color_lightblue"
+                    android:src="@drawable/ic_gallery"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_30dp"
+                    android:text="Gallery"
+                    android:gravity="start|center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/imgbtn_gallery"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_community"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/width_70dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_gallery">
+                <ImageButton
+                    android:id="@+id/imgbtn_community"
+                    android:layout_width="@dimen/width_70dp"
+                    android:layout_height="@dimen/width_70dp"
+                    android:background="@drawable/shape_oval_color_lightblue"
+                    android:src="@drawable/ic_community"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_30dp"
+                    android:text="Community"
+                    android:gravity="start|center"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    app:layout_constraintLeft_toRightOf="@+id/imgbtn_community"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--            헤더-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,8 +222,10 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
             <ImageButton
+                android:id="@+id/btn_drawer"
                 android:layout_width="@dimen/height_50dp"
                 android:layout_height="@dimen/height_50dp"
+                android:clickable="true"
                 android:background="@drawable/ic_drawer"
                 android:layout_marginRight="@dimen/margin_5dp"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -53,81 +241,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/drawer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/drawer_main"
-            android:padding="@dimen/margin_15dp"
-            android:layout_marginTop="@dimen/margin_5dp"
-            android:layout_marginRight="@dimen/margin_5dp"
-            android:layoutDirection="ltr">
-            <TextView
-                android:id="@+id/txt_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_person"
-                android:drawablePadding="@dimen/margin_5dp"
-                android:textSize="@dimen/text_15dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:text="로그인 해주세요"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-            <Button
-                android:layout_width="@dimen/width_100dp"
-                android:layout_height="@dimen/height_50dp"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/dark_blue"
-                android:text="Login"
-                android:layout_marginRight="@dimen/margin_30dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/txt_login"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_login" />
-
-            <ImageButton
-                android:id="@+id/btn_research"
-                android:layout_width="@dimen/width_70dp"
-                android:layout_height="@dimen/width_70dp"
-                android:background="@drawable/shape_oval_color_lightblue"
-                android:src="@drawable/ic_research"
-                android:layout_marginTop="@dimen/margin_30dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_login" />
-            <ImageButton
-                android:id="@+id/btn_members"
-                android:layout_width="@dimen/width_70dp"
-                android:layout_height="@dimen/width_70dp"
-                android:background="@drawable/shape_oval_color_lightblue"
-                android:src="@drawable/ic_members"
-                app:layout_constraintRight_toRightOf="@+id/btn_gallery"
-                app:layout_constraintLeft_toLeftOf="@+id/btn_research"
-                app:layout_constraintTop_toTopOf="@id/btn_research"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_research"/>
-            <ImageButton
-                android:id="@+id/btn_gallery"
-                android:layout_width="@dimen/width_70dp"
-                android:layout_height="@dimen/width_70dp"
-                android:background="@drawable/shape_oval_color_lightblue"
-                android:src="@drawable/ic_gallery"
-                app:layout_constraintRight_toLeftOf="@+id/btn_Community"
-                app:layout_constraintLeft_toRightOf="@+id/btn_members"
-                app:layout_constraintTop_toTopOf="@+id/btn_research"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_research"/>
-            <ImageButton
-                android:id="@+id/btn_Community"
-                android:layout_width="@dimen/width_70dp"
-                android:layout_height="@dimen/width_70dp"
-                android:background="@drawable/shape_oval_color_lightblue"
-                android:src="@drawable/ic_community"
-                tools:ignore="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/btn_research"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_research"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
