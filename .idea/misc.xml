@@ -10,7 +10,11 @@
         <entry key="app/src/main/res/drawable/stroke_dirtyblue.xml" value="0.1275" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/drawer_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/toolbar_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
