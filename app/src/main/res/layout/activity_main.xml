@@ -24,26 +24,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <include layout="@layout/toolbar_layout"/>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:background="@color/dark_blue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
+        <!--    drawer: drawer로 사용할 때 layout_gravity 꼭 지정해줘야함-->
         <include
             android:id="@+id/drawer_main"
             layout="@layout/drawer_main"/>
-
-        <!--    drawer: drawer로 사용할 때 layout_gravity 꼭 지정해줘야함-->
-
-
-        <!--            헤더-->
-
-        <!--            <androidx.fragment.app.FragmentContainerView-->
-        <!--                android:id="@+id/fragment"-->
-        <!--                android:name="kr.co.kumoh.d134.isl.view.fragment.HomeFragment"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="match_parent"-->
-        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--                app:layout_constraintEnd_toEndOf="parent"-->
-        <!--                app:layout_constraintStart_toStartOf="parent"-->
-        <!--                app:layout_constraintTop_toTopOf="parent" />-->
-
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

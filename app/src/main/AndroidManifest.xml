@@ -4,6 +4,7 @@
     package="kr.co.kumoh.d134.isl">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,11 +16,14 @@
         android:theme="@style/Theme.ISL"
         tools:targetApi="31">
         <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+        <activity
             android:name=".base.BaseActivity"
             android:exported="false" />
         <activity
             android:name=".view.activity.MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
