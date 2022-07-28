@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:width="30dp"
+        android:height="30dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/light_blue" />
+        </shape>
+    </item>
+
+    <item
+        android:gravity="center"
+        android:drawable="@drawable/ic_research"
+        android:top="@dimen/margin_5dp"
+        android:bottom="@dimen/margin_5dp"
+        android:left="@dimen/margin_5dp"
+        android:right="@dimen/margin_5dp"/>
+</layer-list>

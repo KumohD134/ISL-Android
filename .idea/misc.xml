@@ -8,22 +8,34 @@
         <entry key="app/src/main/res/drawable/ic_drawer.xml" value="0.174" />
         <entry key="app/src/main/res/drawable/ic_gallery.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_members.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/ic_oval_gallery.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/ic_oval_members.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/ic_oval_notice.xml" value="0.1175" />
+        <entry key="app/src/main/res/drawable/ic_oval_research.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.125" />
         <entry key="app/src/main/res/drawable/ic_research.xml" value="0.2235" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1175" />
         <entry key="app/src/main/res/drawable/line_blue.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ripple_round_btn.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_oval_color_blue.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/shape_oval_color_lightblue.xml" value="0.2255" />
         <entry key="app/src/main/res/drawable/stroke_dirtyblue.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/stroke_lightblue.xml" value="0.2255" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/drawer_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/drawer_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_base.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_community.xml" value="0.18125" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_members.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_research.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/toolbar_layout.xml" value="0.1" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.2989583333333333" />
       </map>
     </option>
   </component>

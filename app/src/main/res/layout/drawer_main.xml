@@ -4,12 +4,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer"
-    android:layout_width="350dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:layout_marginTop="@dimen/margin_5dp"
-    android:layout_marginRight="@dimen/margin_5dp"
-    android:background="@drawable/drawer_main"
+    android:background="@color/midnight_blue"
     android:layoutDirection="ltr"
     android:padding="@dimen/margin_15dp">
 
@@ -40,7 +38,7 @@
 
     <EditText
         android:id="@+id/editxt_search"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="@dimen/height_50dp"
         android:backgroundTint="@color/light_blue"
         android:drawableLeft="@drawable/ic_search"
@@ -55,149 +53,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_login" />
 
-<!--    background ripple 효과를 적용하려면 backgroundtint를 무조건 적용해야한다.-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btn_research"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/width_50dp"
-        android:layout_marginTop="@dimen/margin_30dp"
-        android:background="@drawable/ripple_round_btn"
-        android:backgroundTint="@color/midnight_blue"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editxt_search">
-
-        <ImageButton
-            android:id="@+id/imgbtn_research"
-            android:layout_width="@dimen/width_50dp"
-            android:layout_height="@dimen/width_50dp"
-            android:background="@drawable/shape_oval_color_lightblue"
-            android:src="@drawable/ic_research"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/margin_10dp"
-            android:gravity="start|center"
-            android:text="Research"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_30dp"
-            android:textStyle="bold"
-            android:background="@null"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/imgbtn_research"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btn_members"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/width_50dp"
-        android:background="@drawable/ripple_round_btn"
-        android:backgroundTint="@color/midnight_blue"
-        android:layout_marginTop="@dimen/margin_30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_research">
-
-        <ImageButton
-            android:id="@+id/imgbtn_members"
-            android:layout_width="@dimen/width_50dp"
-            android:layout_height="@dimen/width_50dp"
-            android:background="@drawable/shape_oval_color_lightblue"
-            android:src="@drawable/ic_members"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/margin_10dp"
-            android:gravity="start|center"
-            android:text="Members"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/imgbtn_members"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btn_gallery"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/width_50dp"
-        android:background="@drawable/ripple_round_btn"
-        android:backgroundTint="@color/midnight_blue"
-        android:layout_marginTop="@dimen/margin_30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_members">
-
-        <ImageButton
-            android:id="@+id/imgbtn_gallery"
-            android:layout_width="@dimen/width_50dp"
-            android:layout_height="@dimen/width_50dp"
-            android:background="@drawable/shape_oval_color_lightblue"
-            android:src="@drawable/ic_gallery"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/margin_10dp"
-            android:gravity="start|center"
-            android:text="Gallery"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/imgbtn_gallery"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btn_community"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/width_50dp"
-        android:background="@drawable/ripple_round_btn"
-        android:backgroundTint="@color/midnight_blue"
-        android:layout_marginTop="@dimen/margin_30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_gallery">
-
-        <ImageButton
-            android:id="@+id/imgbtn_community"
-            android:layout_width="@dimen/width_50dp"
-            android:layout_height="@dimen/width_50dp"
-            android:background="@drawable/shape_oval_color_lightblue"
-            android:src="@drawable/ic_community"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/margin_10dp"
-            android:gravity="start|center"
-            android:text="Community"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_30dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/imgbtn_community"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

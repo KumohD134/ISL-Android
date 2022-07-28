@@ -27,14 +27,26 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/nav_host_fragment"
                 android:name="androidx.navigation.fragment.NavHostFragment"
-                android:background="@color/dark_blue"
+                app:navGraph="@navigation/nav_main"
+                app:defaultNavHost="true"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </LinearLayout>
 
         <!--    drawer: drawer로 사용할 때 layout_gravity 꼭 지정해줘야함-->
-        <include
-            android:id="@+id/drawer_main"
-            layout="@layout/drawer_main"/>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:backgroundTint="@color/midnight_blue"
+            android:paddingTop="@dimen/margin_20dp"
+            app:headerLayout="@layout/drawer_main"
+            app:itemBackground="@color/midnight_blue"
+            app:itemTextColor="@color/white"
+            app:menu="@menu/menu_main"/>
+<!--        <include-->
+<!--            android:id="@+id/drawer_main"-->
+<!--            layout="@layout/drawer_main"/>-->
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

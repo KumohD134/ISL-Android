@@ -2,6 +2,7 @@ package kr.co.kumoh.d134.isl.view.activity
 
 import android.util.Log
 import android.view.Gravity
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -33,27 +34,33 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 setDisplayShowTitleEnabled(false)
                 setDisplayHomeAsUpEnabled(true)
             }
+            navView.itemIconTintList = null
             toolbar.setNavigationOnClickListener {
                 Log.d("서랍 엶1","작동")
                 changeDrawer()
             }
-            val btnResearch: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_research)
-            val btnMembers: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_members)
-            val btnGallery: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_gallery)
-            val btnCommunity: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_community)
-            btnResearch.setOnClickListener {
-                Log.d("동작 확인","리서치")
-            }
-            btnMembers.setOnClickListener {
-                Log.d("동작 확인","리서치")
-            }
-            btnGallery.setOnClickListener {
-                Log.d("동작 확인","리서치")
-            }
-            btnCommunity.setOnClickListener {
-                Log.d("동작 확인","리서치")
-            }
+//            val btnResearch: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_research)
+//            val btnMembers: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_members)
+//            val btnGallery: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_gallery)
+//            val btnCommunity: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_community)
+//            btnResearch.setOnClickListener {
+//                Log.d("동작 확인","리서치")
+//            }
+//            btnMembers.setOnClickListener {
+//                Log.d("동작 확인","리서치")
+//            }
+//            btnGallery.setOnClickListener {
+//                Log.d("동작 확인","리서치")
+//            }
+//            btnCommunity.setOnClickListener {
+//                Log.d("동작 확인","리서치")
+//            }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onBackPressed() {
