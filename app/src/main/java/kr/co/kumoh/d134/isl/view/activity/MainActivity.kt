@@ -6,6 +6,11 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import kr.co.kumoh.d134.isl.R
 import kr.co.kumoh.d134.isl.base.BaseActivity
 import kr.co.kumoh.d134.isl.base.ResponseResult
@@ -13,6 +18,8 @@ import kr.co.kumoh.d134.isl.databinding.ActivityMainBinding
 import kr.co.kumoh.d134.isl.view.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
+    lateinit var navController : NavController
+
     override val mViewModel: MainViewModel by viewModels()
 
     override fun getLayoutRes(): Int = R.layout.activity_main
@@ -34,7 +41,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 setDisplayShowTitleEnabled(false)
                 setDisplayHomeAsUpEnabled(true)
             }
+
             navView.itemIconTintList = null
+
+            val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+            navController = navHost.findNavController()
+
             toolbar.setNavigationOnClickListener {
                 Log.d("서랍 엶1","작동")
                 changeDrawer()
@@ -55,12 +67,14 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 //            btnCommunity.setOnClickListener {
 //                Log.d("동작 확인","리서치")
 //            }
+            navView.setNavigationItemSelectedListener { item ->
+                when (item.itemId){
+                    R.id.nav_research -> navView.setupWithNavController(navController)
+                    else -> Log.d("리서치", "나머지")
+                }
+                return@setNavigationItemSelectedListener true
+            }
         }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onBackPressed() {

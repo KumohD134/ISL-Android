@@ -10,4 +10,29 @@
         android:name="kr.co.kumoh.d134.isl.view.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_memebers"
+        android:name="kr.co.kumoh.d134.isl.view.fragment.MembersFragment"
+        android:label="fragment_members"
+        tools:layout="@layout/fragment_members" />
+    <fragment
+        android:id="@+id/nav_research"
+        android:name="kr.co.kumoh.d134.isl.view.fragment.ResearchFragment"
+        android:label="fragment_research"
+        tools:layout="@layout/fragment_research" />
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="kr.co.kumoh.d134.isl.view.fragment.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/nav_bulletin_board"
+        android:name="kr.co.kumoh.d134.isl.view.fragment.BulletinBoardFragment"
+        android:label="fragment_bulletin_board"
+        tools:layout="@layout/fragment_bulletin_board" />
+    <fragment
+        android:id="@+id/nav_notice"
+        android:name="kr.co.kumoh.d134.isl.view.fragment.NoticeFragment"
+        android:label="fragment_notice"
+        tools:layout="@layout/fragment_notice" />
 </navigation>

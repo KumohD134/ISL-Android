@@ -39,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:fitsSystemWindows="true"
             android:backgroundTint="@color/midnight_blue"
             android:paddingTop="@dimen/margin_20dp"
             app:itemVerticalPadding="@dimen/margin_10dp"
