@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:width="40dp"
+        android:height="40dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/light_blue" />
+        </shape>
+    </item>
 
-</selector>
+    <item
+        android:gravity="center"
+        android:drawable="@drawable/ic_bulletin_board"
+        android:top="@dimen/margin_5dp"
+        android:bottom="@dimen/margin_5dp"
+        android:left="@dimen/margin_5dp"
+        android:right="@dimen/margin_5dp"/>
+</layer-list>

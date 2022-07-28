@@ -41,12 +41,16 @@
             android:layout_gravity="start"
             android:backgroundTint="@color/midnight_blue"
             android:paddingTop="@dimen/margin_20dp"
+            app:itemVerticalPadding="@dimen/margin_10dp"
             app:headerLayout="@layout/drawer_main"
             app:itemBackground="@color/midnight_blue"
             app:itemTextColor="@color/white"
-            app:menu="@menu/menu_main"/>
-<!--        <include-->
-<!--            android:id="@+id/drawer_main"-->
-<!--            layout="@layout/drawer_main"/>-->
+            app:menu="@menu/menu_main">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

@@ -5,5 +5,21 @@
             android:id="@+id/nav_research"
             android:icon="@drawable/ic_oval_research"
             android:title="Research"/>
+        <item
+            android:id="@+id/nav_memebers"
+            android:icon="@drawable/ic_oval_members"
+            android:title="Members"/>
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_oval_gallery"
+            android:title="Gallery"/>
+        <item
+            android:id="@+id/nav_notice"
+            android:icon="@drawable/ic_oval_notice"
+            android:title="Notice"/>
+        <item
+            android:id="@+id/nav_bulletin_board"
+            android:icon="@drawable/ic_oval_bulletin_board"
+            android:title="Bulletin Board"/>
     </group>
 </menu>
