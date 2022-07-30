@@ -20,6 +20,9 @@
     <dimen name="margin_20dp">20dp</dimen>
     <dimen name="margin_30dp">30dp</dimen>
 
+    <dimen name="pager_margin">30dp</dimen>
+    <dimen name="pager_width">250dp</dimen>
+
     <dimen name="design_navigation_icon_size" tools:override="true">40dp</dimen>
     <dimen name="design_navigation_icon_padding" tools:override="true">20dp</dimen>
 </resources>

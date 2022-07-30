@@ -19,14 +19,30 @@
             android:layout_height="match_parent">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/midnight_blue">
                 <TextView
+                    android:id="@+id/txt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="홈 프래그먼트 입니다."
+                    android:text="ISL do the following"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_20dp"
+                    android:fontFamily="@font/noto_kr_black"
+                    android:gravity="left|center"
+                    android:layout_marginLeft="@dimen/margin_5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/pager_do"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:padding="@dimen/margin_20dp"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@+id/txt1"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </FrameLayout>
