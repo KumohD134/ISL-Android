@@ -1,14 +1,8 @@
 package kr.co.kumoh.d134.isl.view.fragment
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -37,8 +31,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(), OnMapRe
         with(mDataBinding) {
             vm = mViewModel
             setDoPageTransformer(pagerDo)
+            setDoPageTransformer(pagerGallery)
             pagerDo.adapter = ViewPagerAdapter(getDoList())
             pagerDo.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            pagerGallery.adapter = ViewPagerAdapter(getGalleryLoist())
+            pagerGallery.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
         }
     }
@@ -70,18 +67,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(), OnMapRe
         )
     }
 
+    private fun getGalleryLoist() : ArrayList<Int> {
+        return arrayListOf<Int>(
+            R.drawable.home_gallery1,
+            R.drawable.home_gallery2,
+            R.drawable.home_gallery3,
+            R.drawable.home_gallery4,
+            R.drawable.home_gallery5,
+        )
+    }
+
     override fun onMapReady(googleMap: GoogleMap?) {
         val marker = LatLng(latitude,longitude)
-        Log.d("디폴트 위치", "동작")
         val gMap = googleMap
-//        if (ActivityCompat.checkSelfPermission(
-//                requireContext(),
-//                Manifest.permission.ACCESS_FINE_LOCATION
-//            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-//                requireContext(),
-//                Manifest.permission.ACCESS_COARSE_LOCATION
-//            ) != PackageManager.PERMISSION_GRANTED
-//        )
+
         gMap?.uiSettings?.isMapToolbarEnabled = false
         gMap?.addMarker(MarkerOptions().position(marker).title("ISL"))
         gMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(marker,15f))
