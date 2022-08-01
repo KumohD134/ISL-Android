@@ -25,12 +25,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     override fun getLayoutRes(): Int = R.layout.activity_main
 
     override fun subscribeUi() {
-//        mDataBinding.constraint.setOnClickListener {
-//            Log.d("터치","터치")
-//        }
-//        with(mViewModel) {
-//
-//        }
+        with(mViewModel) {
+
+        }
         with(mDataBinding) {
             vm = mViewModel
             val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -46,34 +43,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
             val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
             navController = navHost.findNavController()
+            navView.setupWithNavController(navController)
 
             toolbar.setNavigationOnClickListener {
                 Log.d("서랍 엶1","작동")
                 changeDrawer()
             }
-//            val btnResearch: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_research)
-//            val btnMembers: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_members)
-//            val btnGallery: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_gallery)
-//            val btnCommunity: ConstraintLayout = mDataBinding.drawerMain.findViewById(R.id.btn_community)
-//            btnResearch.setOnClickListener {
-//                Log.d("동작 확인","리서치")
-//            }
-//            btnMembers.setOnClickListener {
-//                Log.d("동작 확인","리서치")
-//            }
-//            btnGallery.setOnClickListener {
-//                Log.d("동작 확인","리서치")
-//            }
-//            btnCommunity.setOnClickListener {
-//                Log.d("동작 확인","리서치")
-//            }
-            navView.setNavigationItemSelectedListener { item ->
-                when (item.itemId){
-                    R.id.nav_research -> navView.setupWithNavController(navController)
-                    else -> Log.d("리서치", "나머지")
-                }
-                return@setNavigationItemSelectedListener true
-            }
+
         }
     }
 
@@ -89,6 +65,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         if(!mDataBinding.drawerLayout.isDrawerOpen(Gravity.LEFT)){
             Log.d("서랍 엶","확인1")
             mDataBinding.drawerLayout.openDrawer(Gravity.LEFT)
+
         }else {
             Log.d("서랍 엶","확인2")
             mDataBinding.drawerLayout.closeDrawer(Gravity.LEFT)

@@ -20,14 +20,14 @@
         android:gravity="center"
         android:text="로그인 해주세요"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_15sp"
+        android:textSize="@dimen/text_20dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="@dimen/width_100dp"
+        android:layout_width="@dimen/width_70dp"
         android:layout_height="@dimen/height_50dp"
         android:backgroundTint="@color/white"
         android:text="Login"
