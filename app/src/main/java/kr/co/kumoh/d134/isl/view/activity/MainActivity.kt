@@ -49,7 +49,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 Log.d("서랍 엶1","작동")
                 changeDrawer()
             }
-
         }
     }
 
