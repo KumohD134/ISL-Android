@@ -24,7 +24,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/midnight_blue"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -41,16 +41,36 @@
                         android:layout_marginLeft="@dimen/margin_5dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"/>
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/pager_do"
-                        android:layout_width="match_parent"
-                        android:layout_height="230dp"
-                        android:padding="@dimen/margin_20dp"
-                        android:clipToPadding="false"
-                        android:clipChildren="false"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide_l_map"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.1"/>
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide_r_map"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.9"/>
+<!--                    여기서부터 수정 ㄱ-->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/cat_they_like_eat"
+                        app:layout_constraintLeft_toLeftOf="@+id/guide_l_map"
+                        app:layout_constraintRight_toRightOf="@+id/guide_r_map"
                         app:layout_constraintTop_toBottomOf="@+id/txt1"/>
+<!--                    <androidx.viewpager2.widget.ViewPager2-->
+<!--                        android:id="@+id/pager_do"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="230dp"-->
+<!--                        android:padding="@dimen/margin_20dp"-->
+<!--                        android:clipToPadding="false"-->
+<!--                        android:clipChildren="false"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintRight_toRightOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/txt1"/>-->
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -100,28 +120,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/txt2"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guide_l_map"
-                    android:layout_width="1dp"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.1"/>
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guide_r_map"
-                    android:layout_width="1dp"
-                    android:layout_height="0dp"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.9"/>
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout3"
                     android:layout_width="0dp"
                     android:layout_height="400dp"
                     android:background="@color/midnight_blue"
                     android:padding="@dimen/margin_10dp"
-                    android:layout_marginTop="@dimen/margin_30dp"
-                    app:layout_constraintLeft_toLeftOf="@id/guide_l_map"
-                    app:layout_constraintRight_toRightOf="@id/guide_r_map"
+
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent">
                     <TextView
                         android:id="@+id/txt3"

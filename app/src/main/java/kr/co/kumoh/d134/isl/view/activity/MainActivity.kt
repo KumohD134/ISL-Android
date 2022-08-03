@@ -11,12 +11,15 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import dagger.hilt.android.AndroidEntryPoint
 import kr.co.kumoh.d134.isl.R
 import kr.co.kumoh.d134.isl.base.BaseActivity
 import kr.co.kumoh.d134.isl.base.ResponseResult
 import kr.co.kumoh.d134.isl.databinding.ActivityMainBinding
 import kr.co.kumoh.d134.isl.view.viewmodel.MainViewModel
+import javax.inject.Inject
 
+@AndroidEntryPoint  // 해당 클래스에 dependency를 제공해줄 수 있는 component 생성
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     lateinit var navController : NavController
 

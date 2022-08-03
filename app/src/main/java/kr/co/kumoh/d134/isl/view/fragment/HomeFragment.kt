@@ -30,10 +30,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(), OnMapRe
         }
         with(mDataBinding) {
             vm = mViewModel
-            setDoPageTransformer(pagerDo)
+            //setDoPageTransformer(pagerDo)
             setDoPageTransformer(pagerGallery)
-            pagerDo.adapter = ViewPagerAdapter(getDoList())
-            pagerDo.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+//            pagerDo.adapter = ViewPagerAdapter(getDoList())
+//            pagerDo.orientation = ViewPager2.ORIENTATION_HORIZONTAL
             pagerGallery.adapter = ViewPagerAdapter(getGalleryLoist())
             pagerGallery.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
