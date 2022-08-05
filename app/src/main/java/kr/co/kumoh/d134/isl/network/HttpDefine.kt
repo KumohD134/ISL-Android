@@ -1,8 +1,5 @@
 package kr.co.kumoh.d134.isl.network
 
-/**
- * Created by KimBH on 2022/07/12.
- */
 class HttpDefine {
 
     companion object {

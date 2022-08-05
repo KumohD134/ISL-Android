@@ -5,9 +5,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-/**
- * Created by KimBH on 2021/10/18.
- */
 class ApiClient {
 
     companion object {
