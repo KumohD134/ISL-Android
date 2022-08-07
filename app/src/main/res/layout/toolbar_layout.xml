@@ -16,4 +16,12 @@
         android:textColor="@color/white"
         android:textSize="@dimen/text_20dp"
         android:textStyle="bold" />
+    <Button
+        android:id="@+id/btn_search_bar"
+        android:visibility="gone"
+        android:background="@drawable/ic_search"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/margin_10dp"
+        android:layout_width="@dimen/height_30dp"
+        android:layout_height="@dimen/height_30dp"/>
 </androidx.appcompat.widget.Toolbar>
