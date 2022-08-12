@@ -19,7 +19,10 @@ import kotlinx.coroutines.launch
 import kotlinx.parcelize.Parcelize
 import kr.co.kumoh.d134.isl.R
 import kr.co.kumoh.d134.isl.base.BaseFragment
+import kr.co.kumoh.d134.isl.data.MemberDTO
+import kr.co.kumoh.d134.isl.data.board.api.MemberApi
 import kr.co.kumoh.d134.isl.databinding.FragmentHomeBinding
+import kr.co.kumoh.d134.isl.network.ApiClient
 import kr.co.kumoh.d134.isl.network.ApiService
 import kr.co.kumoh.d134.isl.view.adapter.ViewPagerAdapter
 import kr.co.kumoh.d134.isl.view.viewmodel.MainViewModel
@@ -55,16 +58,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(), OnMapRe
             pagerGallery.adapter = ViewPagerAdapter(getGalleryLoist())
             pagerGallery.orientation = ViewPager2.ORIENTATION_HORIZONTAL
             btnTest.setOnClickListener {
-                CoroutineScope(Dispatchers.Main).launch {
-                    testAPIGet()
-                }
+                testAPIGet()
             }
 
         }
     }
 
     suspend fun testAPI(){
-        val baseURL: String = "http://117.20.209.64:8080/"//"http://holo.dothome.co.kr/"
+        val baseURL: String = "http://117.20.209.64:8080/"
         val email: String = "leeyeah8245@gmail.com"
         //var result: HoloUser? = null
         val dto:TestDTO = TestDTO()
@@ -96,25 +97,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(), OnMapRe
 
     }
 
-    suspend fun testAPIGet(){
-        val baseURL: String = "http://holo.dothome.co.kr/"
-        val email: String = "leeyeah8245@gmail.com"
-        val retrofit = Retrofit.Builder()
-            .baseUrl(baseURL)
-            .addConverterFactory(ScalarsConverterFactory.create())  // 결과값을 string으로도 받게 해줌
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val api = retrofit.create(ApiService::class.java)
-        val callGetLogin = api.loginCheck(email)
-
-        callGetLogin.enqueue(object : Callback<String> {
-            override fun onResponse(call: Call<String>, response: Response<String>) {
+    fun testAPIGet(){
+        val retrofit: Retrofit = ApiClient.getClient()
+        val api = retrofit.create(MemberApi::class.java)
+        val callLoadMembers = api.loadMembers()
+        callLoadMembers.enqueue(object : Callback<ArrayList<MemberDTO>>{
+            override fun onResponse(
+                call: Call<ArrayList<MemberDTO>>,
+                response: Response<ArrayList<MemberDTO>>
+            ) {
                 if (response.isSuccessful){
                     Log.d("레트로핏 결과", response.body().toString())
                 }
             }
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<MemberDTO>>, t: Throwable) {
                 Log.d("레트로핏 결과", call.toString()+"t: ${t.toString()}")
             }
 

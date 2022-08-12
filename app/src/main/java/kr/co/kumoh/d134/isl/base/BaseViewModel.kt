@@ -2,6 +2,7 @@ package kr.co.kumoh.d134.isl.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kr.co.kumoh.d134.isl.data.ResponseResult
 
 abstract class BaseViewModel : ViewModel(), BaseContractViewModel {
     var isLoading: MutableLiveData<Boolean> = MutableLiveData(false)

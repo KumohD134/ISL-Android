@@ -21,13 +21,12 @@ class ApiClient {
 
 
         private fun gsonFactory(): GsonConverterFactory {
-            val gson = GsonBuilder().setLenient().create()
+            val gson = GsonBuilder().setLenient().create()  // setLenient: RFC 4627에 의해 구체화된 JSON가 아니더라도 허용(parser로 인해)
             return GsonConverterFactory.create(gson)
         }
 
         private fun okHttpClient(): OkHttpClient = OkHttpClient.Builder()
-            .addInterceptor(HeaderInterceptor())    //  서버 통신 직전 작업 가능
+            .addInterceptor(HeaderInterceptor())    //  TODO: 서버 통신 직전 작업 가능
             .build()
-
     }
 }

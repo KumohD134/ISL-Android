@@ -220,15 +220,15 @@ private fun ListUnderStudent(){   // TODO: Member 클래스 인자로 받기
                 text = "Junha Hwang(황준하)",
                 textAlign = TextAlign.Center,
                 color = Color.Black,
-                fontSize = 15.sp,
+                fontSize = 10.sp,
                 style = Nototypography.body1,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(start = 5.dp)
             )
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier.fillMaxHeight()
+                    .padding(top = 10.dp)
             ) {
                 Text(
                     text = "부산대학교 컴퓨터공학과 박사 학위\n\n" +
@@ -236,7 +236,7 @@ private fun ListUnderStudent(){   // TODO: Member 클래스 인자로 받기
                             "객체지향 프로그래망과 지능형시스템 분야 강의",
                     color = Color.Black,
                     textAlign = TextAlign.Start,
-                    fontSize = 10.sp,
+                    fontSize = 7.sp,
                     style = Nototypography.body2,
                     modifier = Modifier
                         .fillMaxWidth()

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import kr.co.kumoh.d134.isl.data.ResponseResult
 import kr.co.kumoh.d134.isl.loading.LoadingDialog
 import kr.co.kumoh.d134.isl.util.ErrorUtil
 import kr.co.kumoh.d134.isl.util.ResultCodeUtil
