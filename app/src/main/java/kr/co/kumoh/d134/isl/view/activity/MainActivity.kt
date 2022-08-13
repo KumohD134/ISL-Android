@@ -45,7 +45,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             navView.setupWithNavController(navController)
 
             toolbar.setNavigationOnClickListener {
-                Log.d("서랍 엶1","작동")
                 changeDrawer()
             }
         }
@@ -59,13 +58,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     fun changeDrawer(){
-        Log.d("서랍 엶","작동")
         if(!mDataBinding.drawerLayout.isDrawerOpen(Gravity.LEFT)){
-            Log.d("서랍 엶","확인1")
             mDataBinding.drawerLayout.openDrawer(Gravity.LEFT)
 
         }else {
-            Log.d("서랍 엶","확인2")
             mDataBinding.drawerLayout.closeDrawer(Gravity.LEFT)
         }
     }

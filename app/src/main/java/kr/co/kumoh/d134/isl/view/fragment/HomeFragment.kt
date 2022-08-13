@@ -98,24 +98,24 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(), OnMapRe
     }
 
     fun testAPIGet(){
-        val retrofit: Retrofit = ApiClient.getClient()
-        val api = retrofit.create(MemberApi::class.java)
-        val callLoadMembers = api.loadMembers()
-        callLoadMembers.enqueue(object : Callback<ArrayList<MemberDTO>>{
-            override fun onResponse(
-                call: Call<ArrayList<MemberDTO>>,
-                response: Response<ArrayList<MemberDTO>>
-            ) {
-                if (response.isSuccessful){
-                    Log.d("레트로핏 결과", response.body().toString())
-                }
-            }
-
-            override fun onFailure(call: Call<ArrayList<MemberDTO>>, t: Throwable) {
-                Log.d("레트로핏 결과", call.toString()+"t: ${t.toString()}")
-            }
-
-        })
+//        val retrofit: Retrofit = ApiClient.getClient()
+//        val api = retrofit.create(MemberApi::class.java)
+//        val callLoadMembers = api.loadMembers()
+//        callLoadMembers.enqueue(object : Callback<ArrayList<MemberDTO>>{
+//            override fun onResponse(
+//                call: Call<ArrayList<MemberDTO>>,
+//                response: Response<ArrayList<MemberDTO>>
+//            ) {
+//                if (response.isSuccessful){
+//                    Log.d("레트로핏 결과", response.body().toString())
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<ArrayList<MemberDTO>>, t: Throwable) {
+//                Log.d("레트로핏 결과", call.toString()+"t: ${t.toString()}")
+//            }
+//
+//        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

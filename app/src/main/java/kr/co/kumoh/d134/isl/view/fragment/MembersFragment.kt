@@ -1,6 +1,7 @@
 package kr.co.kumoh.d134.isl.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,8 +36,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.viewmodel.compose.viewModel
 import kr.co.kumoh.d134.isl.R
 import kr.co.kumoh.d134.isl.view.compose.Nototypography
+import kr.co.kumoh.d134.isl.view.viewmodel.MemberViewModel
 
 class MembersFragment : Fragment() {
 
@@ -63,6 +66,8 @@ private fun ShowScreen(){
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun Screen(){
+    val vm: MemberViewModel = viewModel()
+    vm.getMembers()
     val types: List<String> = arrayListOf("Professor", "Graduate: Master")
     val names: List<String> = arrayListOf("이예은", "김민수", "이종렬", "홍건우", "설진영")
 
@@ -227,7 +232,8 @@ private fun ListUnderStudent(){   // TODO: Member 클래스 인자로 받기
                     .padding(start = 5.dp)
             )
             Box(
-                modifier = Modifier.fillMaxHeight()
+                modifier = Modifier
+                    .fillMaxHeight()
                     .padding(top = 10.dp)
             ) {
                 Text(
