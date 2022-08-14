@@ -12,5 +12,11 @@
     <string name="network_error">데이터 요청에 실패하였습니다.\n네트워크 상태를 확인해주세요.</string>
     <string name="service_error">일시적으로 서비스가 원활하지 않습니다.\n잠시 후 다시 이용해주세요.</string>
 
+    <string name="research">Research</string>
+    <string name="members">Members</string>
+    <string name="gallery">Gallery</string>
+    <string name="notice">Notice</string>
+    <string name="bulletin_board">Bulletin Board</string>
+
     <string name="home_contact">Email : jhhwang@kumoh.ac.kr\nTEL : (054) 478–7519, 7520\nFAX : (054) 478-7539\nDigital Building 134, 61, Daehak-ro, Gumi-si,\nGyeongsangbuk-do, Republic of Korea</string>
 </resources>

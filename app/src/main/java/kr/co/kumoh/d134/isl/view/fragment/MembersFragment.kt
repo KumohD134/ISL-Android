@@ -29,6 +29,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -79,7 +80,7 @@ private fun Screen(){
         LazyColumn(modifier = Modifier.padding(horizontal = 8.dp)){   // 위쪽부터 정렬
             item {
                 Text(
-                text = "Members",
+                text = stringResource(id = R.string.research),
                 color = colorResource(id = R.color.dark_blue),
                 fontSize = 30.sp,
                 style = Nototypography.h1,
