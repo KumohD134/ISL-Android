@@ -63,12 +63,16 @@ private fun ShowScreen(){
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
+
 @Composable
 private fun Screen(){
-    val vm: MemberViewModel = viewModel()
-    vm.getMembers()
-    val types: List<String> = arrayListOf("Professor", "Graduate: Master")
+    val PROFESSOR = "Professor"
+    val MASTER = "Graduate: Master"
+    val STUDENT = "Undergraduate\n" + "Student"
+    //TODO: muatableState 추가 => 관련 코드 클론 코딩 후
+//    val vm: MemberViewModel = viewModel()
+//    vm.getMembers()
+    val types: List<String> = arrayListOf(PROFESSOR, MASTER, STUDENT)
     val names: List<String> = arrayListOf("이예은", "김민수", "이종렬", "홍건우", "설진영")
 
     Surface(){
@@ -98,49 +102,26 @@ private fun Screen(){
                             .padding(all = 5.dp)
                     )
                 }
-                ListProfessor()
-            }
-
-            item {
-                Box(modifier = Modifier.padding(top = 30.dp)) {
-                    Text(
-                        text = "Undergraduate\nStudent",
-                        color = Color.White,
-                        fontSize = 15.sp,
-                        style = Nototypography.h1,
-                        modifier = Modifier
-                            .background(
-                                color = colorResource(id = R.color.dark_blue)
-                            )
-                            .padding(all = 5.dp)
-                    )
-                }
-            }
-
-            item{
-                for (i in 1..2) {
-                    Row(modifier = Modifier
-                        .fillMaxWidth(1f)) {
+                if (type != STUDENT)
+                    ListProfessor()
+                else{
+                    for (i in 1..2) {
+                        Row(modifier = Modifier
+                            .fillMaxWidth(1f)) {
                             Box(modifier = Modifier.weight(1f),
-                               contentAlignment = Alignment.CenterStart) {
+                                contentAlignment = Alignment.CenterStart) {
                                 ListUnderStudent()
                             }
                             Box(modifier = Modifier.weight(1f),
-                            contentAlignment = Alignment.CenterEnd) {
+                                contentAlignment = Alignment.CenterEnd) {
                                 ListUnderStudent()
                             }
                         }
                     }
-
                 }
-
             }
-//            item {
-//                for (i in 1..5) {
-//                    ListGallery(title, date)
-//                }
-//            }
         }
+    }
 }
 
 @Composable

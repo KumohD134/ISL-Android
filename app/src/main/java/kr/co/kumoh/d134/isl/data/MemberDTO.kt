@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MemberDTO(
     @SerializedName("degree")
-    val degree: String?, // TODO: String인지 확인 필요
+    val degree: String?,
     @SerializedName("email")
     val email: String?,
     @SerializedName("englishName")
