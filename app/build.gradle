@@ -53,6 +53,9 @@ dependencies {
     implementation 'com.google.android.material:compose-theme-adapter:1.1.7'
     implementation 'com.google.code.gson:gson:2.8.5'
 
+    // MVI: Orbit
+    implementation("org.orbit-mvi:orbit-core:4.3.2")
+
     // Navigation
     implementation "androidx.navigation:navigation-compose:$navigation_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
