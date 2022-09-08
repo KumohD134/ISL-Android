@@ -8,7 +8,7 @@ import okhttp3.Response
  */
 class HeaderInterceptor : Interceptor {
 
-    override fun intercept(chain: Interceptor.Chain): Response {
+    override fun intercept(chain: Interceptor.Chain): Response {    // 공통된 헤더값 등을 넣을 수 있음
         val original = chain.request()
         val request = original.newBuilder()
             .build()
